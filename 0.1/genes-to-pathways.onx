@@ -1,0 +1,26 @@
+<collection>
+  <title>genes-to-pathways</title>
+  <loader>
+    <plugin>mvn:org.onexus/org.onexus.loader.tsv/0.2</plugin>
+    <parameter>
+      <key>SOURCE_URI</key>
+      <value>${release.uri}/genes-to-pathways.tsv</value>
+    </parameter>
+  </loader>
+  <fields>
+    <field>
+      <id>GENEID</id>
+      <label>geneid</label>
+      <title>Geneid</title>
+      <type>string</type>
+      <primary-key>true</primary-key>
+    </field>
+    <field>
+      <id>PATHWAYID</id>
+      <label>pathwayid</label>
+      <title>Pathwayid</title>
+      <type>string</type>
+    </field>
+  </fields>
+  <links/>
+</collection>

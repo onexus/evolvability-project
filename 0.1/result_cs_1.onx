@@ -1,0 +1,60 @@
+<collection>
+  <title>result_cs_1</title>
+  <loader>
+    <plugin>mvn:org.onexus/org.onexus.loader.tsv/0.2</plugin>
+    <parameter>
+      <key>SOURCE_URI</key>
+      <value>${release.uri}/result_cs_1.tsv</value>
+    </parameter>
+  </loader>
+  <fields>
+    <field>
+      <id>base_gene_id</id>
+      <label>Human Gene</label>
+      <title>Base_gene_id</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>base_prot_id</id>
+      <label>Prot Id</label>
+      <title>Base_prot_id</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>base_spec_id</id>
+      <label>Specie Id</label>
+      <title>Base_spec_id</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>gene2_id</id>
+      <label>Gene Sp. Id</label>
+      <title>Gene2_id</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>prot2_id</id>
+      <label>Prot Sp. Id</label>
+      <title>Prot2_id</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>spec2_id</id>
+      <label>Specie name</label>
+      <title>Spec2_id</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>score</id>
+      <label>score</label>
+      <title>Score</title>
+      <type>double</type>
+    </field>
+  </fields>
+  <links>
+    <link>
+      <collection>genes</collection>
+      <field>base_gene_id == ensembl_gene_id</field>
+    </link>
+  </links>
+</collection>

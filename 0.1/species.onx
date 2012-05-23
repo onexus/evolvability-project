@@ -1,0 +1,25 @@
+<collection>
+  <title>species</title>
+  <loader>
+    <plugin>mvn:org.onexus/org.onexus.loader.tsv/0.2</plugin>
+    <parameter>
+      <key>SOURCE_URI</key>
+      <value>${release.uri}/species.tsv</value>
+    </parameter>
+  </loader>
+  <fields>
+    <field>
+      <id>name_specie</id>
+      <label>name_sp...</label>
+      <title>Name_specie</title>
+      <type>string</type>
+    </field>
+    <field>
+      <id>desc_specie</id>
+      <label>desc_sp...</label>
+      <title>Desc_specie</title>
+      <type>string</type>
+    </field>
+  </fields>
+  <links/>
+</collection>

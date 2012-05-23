@@ -1,0 +1,32 @@
+<collection>
+  <title>Genes</title>
+  <description>Ensembl genes</description>
+  <loader>
+    <plugin>mvn:org.onexus/org.onexus.loader.biomart/0.2</plugin>
+    <parameter>
+      <key>DATASET</key>
+      <value>hsapiens_gene_ensembl</value>
+    </parameter>
+  </loader>
+  <fields>
+    <field>
+      <id>ensembl_gene_id</id>
+      <label>gene</label>
+      <type>string</type>
+    </field>
+    <field>
+      <id>description</id>
+      <label>description</label>
+      <type>string</type>
+      <property>
+        <key>SQL_COLUMN_TYPE</key>
+        <value>TEXT</value>
+      </property>
+    </field>
+    <field>
+      <id>hgnc_symbol</id>
+      <label>symbol</label>
+      <type>string</type>
+    </field>
+  </fields>
+</collection>
