@@ -7,13 +7,31 @@
       <release>0.1</release>
       <tabs>
         <tab>
+          <id>table-go-vs-species</id>
+          <title>Go vs Species</title>
+          <view>
+            <title>Table view</title>
+            <main>table-genes-to-go</main>
+            <left></left>
+          </view>
+        </tab>
+        <tab>
+          <id>table-go</id>
+          <title>Go</title>
+          <view>
+            <title>Table view</title>
+            <main>table-go</main>
+            <left></left>
+          </view>
+        </tab>
+        <tab>
           <id>genes</id>
           <title>Genes</title>
           <view>
             <title>Table view</title>
             <main>table-genes</main>
-            <left>filter-species</left>
-            <top>search-species</top>
+            <left></left>
+            <top></top>
           </view>
         </tab>
         <tab>
@@ -39,19 +57,58 @@
       </tabs>
       <widgets>
         <viewer-table>
+          <id>table-go</id>
+          <collection>go</collection>
+          <columnset>
+            <columns>
+              <column>
+                <collection>go</collection>
+                <fields>go_term_accession</fields>
+                <decorator>LINK</decorator>
+              </column>
+              <column>
+                <collection>go</collection>
+                <fields>go_term_name,go_term_definition,go_domain</fields>
+              </column>
+            </columns>
+          </columnset>
+        </viewer-table>
+        <viewer-table>
+          <id>table-genes-to-go</id>
+          <collection>genes-to-go</collection>
+          <columnset>
+            <columns>
+              <column>
+                <collection>genes-to-go</collection>
+                <fields>ensembl_gene_id</fields>
+                <decorator>LINK</decorator>
+              </column>
+              <column>
+                <collection>genes-to-go</collection>
+                <fields>go_term_accession</fields>
+                <decorator>LINK</decorator>
+              </column>
+            </columns>
+          </columnset>
+        </viewer-table>
+        <viewer-table>
           <id>table-genes</id>
-          <collection>result_cs_1</collection>
+          <collection>result_cs</collection>
           <columnset>
             <title>default</title>
             <columns>
               <column>
                 <collection>genes</collection>
-                <fields>GENEID, SYMBOL</fields>
+                <fields>ensembl_gene_id</fields>
                 <decorator>LINK</decorator>
               </column>
               <column>
-                <collection>result_cs_1</collection>
-                <fields>base_prot_id, gene2_id, prot2_id, spec2_id, score</fields>
+                <collection>genes</collection>
+                <fields>hgnc_symbol</fields>
+              </column>
+              <column>
+                <collection>result_cs</collection>
+                <fields>base_gene_id,base_prot_id,gene2_id,prot2_id,spec2_id,score</fields>
               </column>
             </columns>
           </columnset>
@@ -84,7 +141,7 @@
         <widget-search>
           <id>search-species</id>
           <column>
-            <collection>result_cs_1</collection>
+            <collection>result_cs</collection>
             <fields>spec2_id</fields>
           </column>
         </widget-search>
@@ -94,12 +151,12 @@
           <fieldSelection>
             <field-selection>
               <title>Specie Filter</title>
-              <collection>result_cs_1</collection>
+              <collection>result_cs</collection>
               <fieldName>spec2_id</fieldName>
             </field-selection>
             <field-selection>
               <title>Score Filter</title>
-              <collection>result_cs_1</collection>
+              <collection>result_cs</collection>
               <fieldName>score</fieldName>
             </field-selection>
           </fieldSelection>
@@ -110,10 +167,10 @@
               <deletable>false</deletable>
               <hidden>false</hidden>
               <name>Pathways with gene</name>
-              <visible>genes-to-pathways</visible>
+              <visible>genes</visible>
               <rules>
                 <org.onexus.core.query.NotNull>
-                  <collection>result_cs_1</collection>
+                  <collection>result_cs</collection>
                   <cellCollections>
                     <string>genes-to-pathways</string>
                   </cellCollections>
