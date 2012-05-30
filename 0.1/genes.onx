@@ -13,6 +13,7 @@
       <id>ensembl_gene_id</id>
       <label>gene</label>
       <type>string</type>
+      <primary-key>true</primary-key>
     </field>
     <field>
       <id>description</id>
@@ -29,4 +30,10 @@
       <type>string</type>
     </field>
   </fields>
+  <links>
+    <link>
+      <collection>genes</collection>
+      <field>ensembl_gene_id == ensembl_gene_id</field>
+    </link>
+  </links>
 </collection>

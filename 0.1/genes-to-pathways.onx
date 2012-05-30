@@ -22,5 +22,10 @@
       <type>string</type>
     </field>
   </fields>
-  <links/>
+  <links>
+    <link>
+      <collection>genes</collection>
+      <field>GENEID == ensembl_gene_id</field>
+    </link>
+  </links>
 </collection>

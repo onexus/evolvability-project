@@ -1,0 +1,4 @@
+<source>
+  <repository>local</repository>
+  <path>demo/evolvability/0.1/result_cs*.tsv</path>
+</source>
