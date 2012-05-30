@@ -11,6 +11,15 @@
           <title>Go vs Species</title>
           <view>
             <title>Table view</title>
+            <main>table-go-x-specie</main>
+            <left></left>
+          </view>
+        </tab>
+        <tab>
+          <id>table-genes2go</id>
+          <title>Genes2Go</title>
+          <view>
+            <title>Table view</title>
             <main>table-genes-to-go</main>
             <left></left>
           </view>
@@ -56,6 +65,28 @@
         </tab>
       </tabs>
       <widgets>
+        <viewer-table>
+          <id>table-go-x-specie</id>
+          <collection>result_cs</collection>
+          <columnset>
+            <title>default</title>
+            <columns>
+              <column>
+                <collection>genes</collection>
+                <fields>ensembl_gene_id</fields>
+                <decorator>LINK</decorator>
+              </column>
+              <column>
+                <collection>genes</collection>
+                <fields>hgnc_symbol</fields>
+              </column>
+              <column>
+                <collection>result_cs</collection>
+                <fields>base_gene_id,gene2_id,spec2_id,score</fields>
+              </column>
+            </columns>
+          </columnset>
+        </viewer-table>
         <viewer-table>
           <id>table-go</id>
           <collection>go</collection>
