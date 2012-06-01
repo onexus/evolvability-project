@@ -7,12 +7,13 @@
       <release>0.1</release>
       <tabs>
         <tab>
-          <id>table-go-vs-species</id>
-          <title>Go vs Species</title>
+          <id>table-species-gene</id>
+          <title>Specie - Gene</title>
           <view>
             <title>Table view</title>
-            <main>table-go-x-specie</main>
-            <left></left>
+            <main>table-specie-gene</main>
+            <left>export</left>
+            <top></top>
           </view>
         </tab>
         <tab>
@@ -65,24 +66,27 @@
         </tab>
       </tabs>
       <widgets>
+        <widget-export>
+          <id>export</id>
+        </widget-export>
         <viewer-table>
-          <id>table-go-x-specie</id>
+          <id>table-specie-gene</id>
           <collection>result_cs</collection>
           <columnset>
             <title>default</title>
             <columns>
+              <column>
+                <collection>result_cs</collection>
+                <fields>spec2_id</fields>
+              </column>
               <column>
                 <collection>genes</collection>
                 <fields>ensembl_gene_id</fields>
                 <decorator>LINK</decorator>
               </column>
               <column>
-                <collection>genes</collection>
-                <fields>hgnc_symbol</fields>
-              </column>
-              <column>
                 <collection>result_cs</collection>
-                <fields>base_gene_id,gene2_id,spec2_id,score</fields>
+                <fields>score</fields>
               </column>
             </columns>
           </columnset>
