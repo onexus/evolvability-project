@@ -12,8 +12,8 @@
           <view>
             <title>Table view</title>
             <main>table-specie-gene</main>
-            <left>export</left>
-            <top></top>
+            <left>filter-species,export</left>
+            <top>search-species</top>
           </view>
         </tab>
         <tab>
@@ -22,7 +22,7 @@
           <view>
             <title>Table view</title>
             <main>table-genes-to-go</main>
-            <left></left>
+            <left>export</left>
           </view>
         </tab>
         <tab>
@@ -31,12 +31,12 @@
           <view>
             <title>Table view</title>
             <main>table-go</main>
-            <left></left>
+            <left>filter-go,filters-selector-go-dom,export</left>
           </view>
         </tab>
         <tab>
           <id>genes</id>
-          <title>Genes</title>
+          <title>Result CS</title>
           <view>
             <title>Table view</title>
             <main>table-genes</main>
@@ -46,7 +46,7 @@
         </tab>
         <tab>
           <id>pathways</id>
-          <title>Pathways</title>
+          <title>Genes2Pathways</title>
           <view>
             <title>Table view</title>
             <main>table-pathways</main>
@@ -60,7 +60,7 @@
           <view>
             <title>Table view</title>
             <main>table-species</main>
-            <left></left>
+            <left>export</left>
             <top></top>
           </view>
         </tab>
@@ -168,7 +168,7 @@
             <columns>
               <column>
                 <collection>species</collection>
-                <fields>name_specie, desc_specie </fields>
+                <fields>name_specie, desc_specie, clade </fields>
               </column>
             </columns>
           </columnset>
@@ -180,6 +180,30 @@
             <fields>spec2_id</fields>
           </column>
         </widget-search>
+        <widget-filters>
+          <id>filter-go</id>
+          <title>Filter Go</title>
+          <fieldSelection>
+            <field-selection>
+              <title>Go Filter</title>
+              <collection>go</collection>
+              <fieldName>go_domain</fieldName>
+            </field-selection>
+          </fieldSelection>
+          <filters/>
+        </widget-filters>
+        <widget-filters-selector>
+          <id>filters-selector-go-dom</id>
+          <title>Filters selector</title>
+          <fieldSelection>
+            <field-selection>
+              <title>Go Filter</title>
+              <collection>go</collection>
+              <fieldName>go_domain</fieldName>
+            </field-selection>
+          </fieldSelection>
+          <filters/>
+        </widget-filters-selector>
         <widget-filters>
           <id>filter-species</id>
           <userFilters>true</userFilters>
